@@ -16,7 +16,7 @@ function User() {
                 setUser(doc);
                 setShowContent(true);
             });
-    }, [user]);
+    }, [user, id]);
 
     return (
         <div>
