@@ -6,8 +6,13 @@ Informações sobre o backend [aqui](https://github.com/deividsilvajs/more-healt
 
 ## Índice
 
+- [Requisitos](#requisitos)
 - [Instalação](#instalação)
 - [Como usar](#como-usar)
+
+## Requisitos
+
+- [Backend](https://github.com/deividsilvajs/more-health-backend) em funcionamento.
 
 ## Instalação
 
