@@ -1,7 +1,7 @@
 function About() {
 
     return (
-        <div className='card text-bg-info p-4 mt-4 mb-4'>
+        <div className='card p-4 mt-4 mb-4'>
             <div className='card-header'>
                 <h3>Sobre o More Health</h3>
             </div>
