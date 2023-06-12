@@ -14,8 +14,8 @@ function Informations(props) {
                 <div>
                     <h5>Peso: {user.weight}kg</h5>
                     <h5>Altura: {user.height}cm</h5>
-                    <h5 id='imc'>IMC: {user.imc}</h5>
-                    <h5 id='water'>Água Diária: {user.water}ml</h5>
+                    <h5 id='imc'>IMC: </h5>
+                    <h5 id='water'>Água Diária: </h5>
                 </div>
                 <button onClick={() => props.showUpdateWeight()} className='btn btn-outline-secondary align-self-center'>Atualizar Peso</button>
             </div>

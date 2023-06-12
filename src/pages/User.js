@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Content from './components/user/Content';
+import User from './components/user/User';
 
-function User() {
+function Page() {
 
     const { id } = useParams();
 
@@ -13,7 +14,8 @@ function User() {
         fetch(`http://localhost:8080/getUser/${id}`)
             .then(res => res.json())
             .then(doc => {
-                setUser(doc);
+                const user = new User(doc);
+                setUser(user);
                 setShowContent(true);
             });
     }, [user, id]);
@@ -26,4 +28,4 @@ function User() {
 
 };
 
-export default User;
+export default Page;
