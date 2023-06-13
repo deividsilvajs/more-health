@@ -1,9 +1,9 @@
-// import { useContext } from 'react';
-// import { UserContext } from './UserContext';
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 function Bulking() {
 
-    // const [user] = useContext(UserContext);
+    const [user] = useContext(UserContext);
 
     return (
         <div className='card w-75 p-4 my-3 text-bg-success'>
@@ -13,15 +13,15 @@ function Bulking() {
             <div className='card-body d-flex justify-content-between'>
                 <div className='d-flex flex-column align-items-center'>
                     <h5>Carboidrato</h5>
-                    <h5></h5>
+                    <h5>{user.bulkingCarbo()[0]}g a {user.bulkingCarbo()[1]}g</h5>
                 </div>
                 <div className='d-flex flex-column align-items-center'>
                     <h5>Proteína</h5>
-                    <h5></h5>
+                    <h5>{user.bulkingProt()[0]}g a {user.bulkingProt()[1]}g</h5>
                 </div>
                 <div className='d-flex flex-column align-items-center'>
                     <h5>Gordura</h5>
-                    <h5></h5>
+                    <h5>{user.bulkingFat()[0]}g a {user.bulkingFat()[1]}g</h5>
                 </div>
             </div>
         </div>

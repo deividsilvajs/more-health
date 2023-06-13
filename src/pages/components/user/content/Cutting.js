@@ -1,9 +1,9 @@
-// import { useContext } from 'react';
-// import { UserContext } from './UserContext';
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 function Cutting() {
 
-    // const [user] = useContext(UserContext);
+    const [user] = useContext(UserContext);
 
     return (
         <div className='card w-75 p-4 my-3 text-bg-danger'>
@@ -13,15 +13,15 @@ function Cutting() {
             <div className='card-body d-flex justify-content-between'>
                 <div className='d-flex flex-column align-items-center'>
                     <h5>Carboidrato</h5>
-                    <h5></h5>
+                    <h5>{user.cuttingCarbo()[0]}g a {user.cuttingCarbo()[1]}g</h5>
                 </div>
                 <div className='d-flex flex-column align-items-center'>
                     <h5>Proteína</h5>
-                    <h5></h5>
+                    <h5>{user.cuttingProt()[0]}g a {user.cuttingProt()[1]}g</h5>
                 </div>
                 <div className='d-flex flex-column align-items-center'>
                     <h5>Gordura</h5>
-                    <h5></h5>
+                    <h5>{user.cuttingFat()[0]}g a {user.cuttingFat()[1]}g</h5>
                 </div>
             </div>
         </div>
