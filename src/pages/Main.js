@@ -1,4 +1,4 @@
-import Content from './components/main/Content';
+import Content from '../components/main/Content';
 
 function Main() {
     return (
