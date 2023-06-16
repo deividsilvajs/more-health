@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Content from './components/user/Content';
-import User from './components/user/User';
+import User from '../User/User';
 
 function Page() {
 
