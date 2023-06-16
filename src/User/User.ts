@@ -1,56 +1,62 @@
-export default class User {
+import { UserMetrics as IUser, MetricsValues } from './IUser';
 
-    constructor({ name, weight, height }) {
+export default class User implements IUser {
+
+    name: string;
+    weight: number;
+    height: number;
+
+    constructor({ name, weight, height }: IUser) {
         this.name = name;
         this.weight = weight;
         this.height = height;
-    };
+    }
 
     imc() {
         // Transformando cm em m
         const height = this.height / 100;
         const imc = (this.weight / (height * height)).toFixed(1);
         return imc;
-    };
+    }
 
     water() {
         return (Math.ceil(this.weight * 35) / 1000).toFixed(3);
-    };
+    }
 
-    bulkingCarbo() {
+    bulkingCarbo(): MetricsValues {
         const min = Math.ceil(this.weight * 3);
         const max = Math.ceil(this.weight * 6);
         return [min, max];
-    };
+    }
 
-    bulkingProt() {
+    bulkingProt(): MetricsValues {
         const min = Math.ceil(this.weight * 1.6);
         const max = Math.ceil(this.weight * 2.2);
         return [min, max];
-    };
+    }
 
-    bulkingFat() {
+    bulkingFat(): MetricsValues {
         const min = Math.ceil(this.weight * 0.5);
         const max = Math.ceil(this.weight * 1.5);
         return [min, max];
-    };
+    }
 
-    cuttingCarbo() {
+    cuttingCarbo(): MetricsValues {
         const min = Math.ceil(this.weight * 1.5);
         const max = Math.ceil(this.weight * 3);
         return [min, max];
-    };
+    }
 
-    cuttingProt() {
+    cuttingProt(): MetricsValues {
         const min = Math.ceil(this.weight * 1.8);
         const max = Math.ceil(this.weight * 2.4);
         return [min, max];
-    };
+    }
 
-    cuttingFat() {
+    cuttingFat(): MetricsValues {
         const min = Math.ceil(this.weight * 0.5);
         const max = Math.ceil(this.weight * 1.5);
         return [min, max];
-    };
+    }
 
-};
+}
