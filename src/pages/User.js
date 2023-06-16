@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Content from './components/user/Content';
+import Content from '../components/user/Content';
 import User from '../User/User';
 
 function Page() {

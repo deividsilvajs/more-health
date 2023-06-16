@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UserProvider } from './content/UserContext';
+import { UserProvider } from '../../User/UserContext';
 import Informations from './content/Informations';
 import Bulking from './content/Bulking';
 import Cutting from './content/Cutting';
