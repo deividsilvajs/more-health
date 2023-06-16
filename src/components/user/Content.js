@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { UserProvider } from '../../User/UserContext';
-import Informations from './content/Informations';
-import Bulking from './content/Bulking';
-import Cutting from './content/Cutting';
-import UpdateWeightForm from './content/UpdateWeightForm';
+import Informations from './cards/Informations';
+import Bulking from './cards/Bulking';
+import Cutting from './cards/Cutting';
+import UpdateWeightForm from './UpdateWeightForm';
 import { useParams } from 'react-router-dom';
 
 function Content(props) {
