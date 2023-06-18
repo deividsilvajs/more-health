@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from 'lucide-react';
 
 function LoginForm(props) {
 
@@ -8,6 +9,7 @@ function LoginForm(props) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showLoader, setShowLoader] = useState(false);
 
     function hideLogin(e) {
         if (e.target.classList[0] === 'form') {
@@ -15,19 +17,19 @@ function LoginForm(props) {
         };
     };
 
-    function waitingButton(button) {
-        button.classList = 'btn align-self-center';
-        button.innerText = 'Carregando...';
+    function loaderButton(button) {
+        button.style.display = 'none';
+        setShowLoader(true);
     };
 
     function defaultButton(button) {
-        button.classList = 'btn btn-primary align-self-center';
-        button.innerText = 'Entrar';
+        button.style.display = 'block';
+        setShowLoader(false);
     };
 
     function enterTheAccount(e) {
         e.preventDefault();
-        waitingButton(button.current);
+        loaderButton(button.current);
         const user = { email, password };
         const options = {
             method: 'POST', 
@@ -62,6 +64,7 @@ function LoginForm(props) {
                         <input onChange={e => setPassword(e.target.value)} className='form-control' type='password' required />
                     </div>
                     <button ref={button} className='btn btn-primary align-self-center' type='submit'>Entrar</button>
+                    {showLoader ? <Loader className='align-self-center' /> : null}
                 </div>
             </form>
         </div>
