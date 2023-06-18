@@ -1,8 +1,10 @@
 import { useState, useRef } from 'react';
+import { Loader } from 'lucide-react';
 
 function UpdateWeightForm(props) {
 
     const [newWeight, setNewWeight] = useState(0);
+    const [showLoader, setShowLoader] = useState(false);
     const button = useRef();
 
     function hideUpdateWeight(e) {
@@ -11,14 +13,14 @@ function UpdateWeightForm(props) {
         };
     };
 
-    function waitingButton(button) {
-        button.classList = 'btn align-self-center';
-        button.innerText = 'Carregando...';
+    function loaderButton(button) {
+        button.style.display = 'none';
+        setShowLoader(true);
     };
 
     function updateWeight(e) {
         e.preventDefault();
-        waitingButton(button.current);
+        loaderButton(button.current);
         const payload = { id: props.id, newWeight };
         const options = {
             method: 'PUT',
@@ -38,6 +40,7 @@ function UpdateWeightForm(props) {
                         <input onChange={e => setNewWeight(e.target.value)} className='form-control' type='text' required />
                     </div>
                     <button ref={button} className='btn btn-primary align-self-center' type='submit'>Atualizar</button>
+                    {showLoader ? <Loader className='align-self-center loader' /> : null}
                 </div>
             </form>
         </div>
