@@ -64,7 +64,7 @@ function LoginForm(props) {
                         <input onChange={e => setPassword(e.target.value)} className='form-control' type='password' required />
                     </div>
                     <button ref={button} className='btn btn-primary align-self-center' type='submit'>Entrar</button>
-                    {showLoader ? <Loader className='align-self-center' /> : null}
+                    {showLoader ? <Loader className='align-self-center loader' /> : null}
                 </div>
             </form>
         </div>

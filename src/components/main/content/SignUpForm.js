@@ -82,7 +82,7 @@ function SignUpForm(props) {
                         </div>
                     </div>
                     <button ref={button} className='btn btn-primary align-self-center' type='submit'>Cadastrar</button>
-                    {showLoader ? <Loader className='align-self-center' /> : null}
+                    {showLoader ? <Loader className='align-self-center loader' /> : null}
                 </div>
             </form>
         </div>
