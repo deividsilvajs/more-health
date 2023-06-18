@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from 'lucide-react';
 
 function SignUpForm(props) {
 
@@ -12,25 +13,27 @@ function SignUpForm(props) {
     const [weight, setWeight] = useState('');
     const [height, setHeight] = useState('');
 
+    const [showLoader, setShowLoader] = useState(false);
+
     function hideSignUp(e) {
         if (e.target.classList[0] === 'form') {
             props.hideSignUp();
         };
     };
 
-    function waitingButton(button) {
-        button.classList = 'btn align-self-center';
-        button.innerText = 'Carregando...';
+    function loaderButton(button) {
+        button.style.display = 'none';
+        setShowLoader(true);
     };
 
     function defaultButton(button) {
-        button.classList = 'btn btn-primary align-self-center';
-        button.innerText = 'Cadastrar';
-    }
+        button.style.display = 'block';
+        setShowLoader(false);
+    };
 
     function createAccount(e) {
         e.preventDefault();
-        waitingButton(button.current);
+        loaderButton(button.current);
         const user = { name, email, password, weight, height };
         const options = {
             method: 'POST', 
@@ -79,6 +82,7 @@ function SignUpForm(props) {
                         </div>
                     </div>
                     <button ref={button} className='btn btn-primary align-self-center' type='submit'>Cadastrar</button>
+                    {showLoader ? <Loader className='align-self-center' /> : null}
                 </div>
             </form>
         </div>
