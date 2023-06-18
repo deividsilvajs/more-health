@@ -13,14 +13,14 @@ function UpdateWeightForm(props) {
         };
     };
 
-    function loaderButton(button) {
+    function loaderIcon(button) {
         button.style.display = 'none';
         setShowLoader(true);
     };
 
     function updateWeight(e) {
         e.preventDefault();
-        loaderButton(button.current);
+        loaderIcon(button.current);
         const payload = { id: props.id, newWeight };
         const options = {
             method: 'PUT',

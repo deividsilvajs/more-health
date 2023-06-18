@@ -21,7 +21,7 @@ function SignUpForm(props) {
         };
     };
 
-    function loaderButton(button) {
+    function loaderIcon(button) {
         button.style.display = 'none';
         setShowLoader(true);
     };
@@ -33,7 +33,7 @@ function SignUpForm(props) {
 
     function createAccount(e) {
         e.preventDefault();
-        loaderButton(button.current);
+        loaderIcon(button.current);
         const user = { name, email, password, weight, height };
         const options = {
             method: 'POST', 

@@ -17,7 +17,7 @@ function LoginForm(props) {
         };
     };
 
-    function loaderButton(button) {
+    function loaderIcon(button) {
         button.style.display = 'none';
         setShowLoader(true);
     };
@@ -29,7 +29,7 @@ function LoginForm(props) {
 
     function enterTheAccount(e) {
         e.preventDefault();
-        loaderButton(button.current);
+        loaderIcon(button.current);
         const user = { email, password };
         const options = {
             method: 'POST', 
