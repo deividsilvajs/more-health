@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Loader } from 'lucide-react';
-import { loaderIcon, defaultButton } from '../../../formUtils/icons-buttons';
+import { loaderIcon } from '../../../formUtils/icons-buttons';
+import { formFetch } from '../../../formUtils/formFetch';
 
 function LoginForm(props) {
 
@@ -19,27 +20,23 @@ function LoginForm(props) {
     };
 
     function enterTheAccount(e) {
+
         e.preventDefault();
+
         loaderIcon(button.current, setShowLoader);
+
         const user = { email, password };
+
         const options = {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(user)
         };
+
         fetch('http://localhost:8080/login', options)
-            .then(res => {
-                if (res.status === 200) {
-                    res.text().then(id => navigate(`/userPage/${id}`));
-                } else {
-                    setTimeout(() => {
-                        res.text().then(text => {
-                            alert(text);
-                            defaultButton(button.current, setShowLoader);
-                        });
-                    }, 500);
-                }
-            }).catch(err => alert(err));
+            .then(res => formFetch(res, navigate, button.current, setShowLoader))
+            .catch(err => alert(err));
+
     }
 
     return (
