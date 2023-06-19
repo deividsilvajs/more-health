@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Loader } from 'lucide-react';
-import { loaderIcon } from '../../../icons';
+import { loaderIcon, defaultButton } from '../../../icons-buttons';
 
 function LoginForm(props) {
 
@@ -16,11 +16,6 @@ function LoginForm(props) {
         if (e.target.classList[0] === 'form') {
             props.hideLogin();
         };
-    };
-
-    function defaultButton(button) {
-        button.style.display = 'block';
-        setShowLoader(false);
     };
 
     function enterTheAccount(e) {
@@ -40,7 +35,7 @@ function LoginForm(props) {
                     setTimeout(() => {
                         res.text().then(text => {
                             alert(text);
-                            defaultButton(button.current);
+                            defaultButton(button.current, setShowLoader);
                         });
                     }, 500);
                 }
