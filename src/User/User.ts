@@ -1,4 +1,4 @@
-import { UserMetrics as IUser, MetricsValues } from './IUser';
+import { User as IUser, MetricsValues } from './IUser';
 
 export default class User implements IUser {
 

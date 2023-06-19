@@ -1,12 +1,12 @@
 export type MetricsValues = [number, number];
 
-export interface User {
+export interface Person {
     name: string;
     weight: number;
     height: number;
 }
 
-export interface UserMetrics extends User {
+export interface User extends Person {
     imc: () => string;
     water: () => string;
     bulkingCarbo: () => MetricsValues;
