@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { Loader } from 'lucide-react';
+import { loaderIcon } from '../../icons';
 
 function UpdateWeightForm(props) {
 
@@ -13,14 +14,9 @@ function UpdateWeightForm(props) {
         };
     };
 
-    function loaderIcon(button) {
-        button.style.display = 'none';
-        setShowLoader(true);
-    };
-
     function updateWeight(e) {
         e.preventDefault();
-        loaderIcon(button.current);
+        loaderIcon(button.current, setShowLoader);
         const payload = { id: props.id, newWeight };
         const options = {
             method: 'PUT',

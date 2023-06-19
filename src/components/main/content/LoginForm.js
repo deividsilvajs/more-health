@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Loader } from 'lucide-react';
+import { loaderIcon } from '../../../icons';
 
 function LoginForm(props) {
 
@@ -17,11 +18,6 @@ function LoginForm(props) {
         };
     };
 
-    function loaderIcon(button) {
-        button.style.display = 'none';
-        setShowLoader(true);
-    };
-
     function defaultButton(button) {
         button.style.display = 'block';
         setShowLoader(false);
@@ -29,7 +25,7 @@ function LoginForm(props) {
 
     function enterTheAccount(e) {
         e.preventDefault();
-        loaderIcon(button.current);
+        loaderIcon(button.current, setShowLoader);
         const user = { email, password };
         const options = {
             method: 'POST', 
