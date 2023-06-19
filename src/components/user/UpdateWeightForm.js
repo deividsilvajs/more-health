@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Loader } from 'lucide-react';
-import { loaderIcon } from '../../icons-buttons';
+import { loaderIcon } from '../../formUtils/icons-buttons';
 
 function UpdateWeightForm(props) {
 

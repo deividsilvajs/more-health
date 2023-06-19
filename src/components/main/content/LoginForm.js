@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Loader } from 'lucide-react';
-import { loaderIcon, defaultButton } from '../../../icons-buttons';
+import { loaderIcon, defaultButton } from '../../../formUtils/icons-buttons';
 
 function LoginForm(props) {
 
