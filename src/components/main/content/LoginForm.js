@@ -1,41 +1,44 @@
-import { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Loader } from 'lucide-react';
-import { loaderIcon } from '../../../formUtils/icons-buttons';
-import { formFetch } from '../../../formUtils/formFetch';
+import { useState, useRef, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Loader } from 'lucide-react'
+import { loaderIcon } from '../../../formUtils/icons-buttons'
+import { formFetch } from '../../../formUtils/formFetch'
+import { UserContext } from '../../../User/UserContext'
 
 function LoginForm(props) {
 
-    const navigate = useNavigate();
-    const button = useRef();
+    const navigate = useNavigate()
+    const button = useRef()
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [showLoader, setShowLoader] = useState(false);
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [showLoader, setShowLoader] = useState(false)
+
+    const [, setUser] = useContext(UserContext)
 
     function hideLogin(e) {
         if (e.target.classList[0] === 'form') {
             props.hideLogin();
-        };
-    };
+        }
+    }
 
     function enterTheAccount(e) {
 
-        e.preventDefault();
+        e.preventDefault()
 
-        loaderIcon(button.current, setShowLoader);
+        loaderIcon(button.current, setShowLoader)
 
-        const user = { email, password };
+        const user = { email, password }
 
         const options = {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(user)
-        };
+        }
 
         fetch('http://localhost:8080/login', options)
-            .then(res => formFetch(res, navigate, button.current, setShowLoader))
-            .catch(err => alert(err));
+            .then(res => formFetch(res, navigate, button.current, setShowLoader, setUser))
+            .catch(err => alert(err))
 
     }
 
@@ -56,8 +59,8 @@ function LoginForm(props) {
                 </div>
             </form>
         </div>
-    );
+    )
 
-};
+}
 
-export default LoginForm;
+export default LoginForm
