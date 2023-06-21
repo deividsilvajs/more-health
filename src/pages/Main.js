@@ -1,11 +1,33 @@
-import Content from '../components/main/Content';
+import { useState } from 'react'
+import About from '../components/main/content/About'
+import Buttons from '../components/main/content/Buttons'
+import LoginForm from '../components/main/content/LoginForm'
+import SignUpForm from '../components/main/content/SignUpForm'
 
-function Main() {
+const Main = () => {
+
+    const [showLogin, setShowLogin] = useState(false)
+
+    const [showSignUp, setShowSignUp] = useState(false)
+
+    function changeLoginState() {
+        setShowLogin(!showLogin)
+    }
+
+    function changeSignUpState() {
+        setShowSignUp(!showSignUp)
+    }
+
     return (
-        <div>
-            <Content />
+        <div id='content' className='d-flex flex-column align-items-center justify-content-center'>
+            <h1>More Health</h1>
+            <About />
+            <Buttons showLogin={changeLoginState} showSignUp={changeSignUpState} />
+            {showLogin ? <LoginForm hideLogin={changeLoginState} /> : null}
+            {showSignUp ? <SignUpForm hideSignUp={changeSignUpState} /> : null}
         </div>
-    );
-};
+    )
 
-export default Main;
+}
+
+export default Main
