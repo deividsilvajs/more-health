@@ -1,4 +1,4 @@
-function About() {
+const About = () => {
 
     return (
         <div className='card p-4 mt-4 mb-4'>
@@ -15,8 +15,8 @@ function About() {
                 </p>
             </div>
         </div>
-    );
+    )
 
-};
+}
 
-export default About;
+export default About

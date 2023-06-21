@@ -4,7 +4,7 @@ import Informations from '../components/user/Informations'
 import Bulking from '../components/user/Bulking'
 import Cutting from '../components/user/Cutting'
 
-const Page = () => {
+const User = () => {
 
     const [user] = useContext(UserContext)
 
@@ -15,8 +15,8 @@ const Page = () => {
             <Bulking user={user} />
             <Cutting user={user} />
         </div>
-    );
+    )
 
-};
+}
 
-export default Page;
+export default User

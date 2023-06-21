@@ -6,7 +6,7 @@ import MainPage from './pages/Main'
 import UserPage from './pages/User'
 import { UserProvider } from './User/UserContext'
 
-function App() {
+const App = () => {
 
     const [user, setUser] = useState({})
 

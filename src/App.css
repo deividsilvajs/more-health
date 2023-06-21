@@ -1,39 +1,45 @@
 @keyframes load {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 #content {
-    padding: 30px;
-    height: 100vh;
-    background: linear-gradient(white, rgb(245, 245, 245), white);
+  padding: 30px;
+  height: 100vh;
+  background: linear-gradient(white, rgb(245, 245, 245), white);
 }
 
 h1 {
-    font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .form {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .loader {
-    animation: load 2s infinite;
+  animation: load 2s infinite;
 }

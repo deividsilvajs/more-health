@@ -1,11 +1,11 @@
 import { useState, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Loader } from 'lucide-react'
+import { UserContext } from '../../User/UserContext'
 import { loaderIcon } from '../../formUtils/icons-buttons'
 import { formFetch } from '../../formUtils/formFetch'
-import { UserContext } from '../../User/UserContext'
 
-function LoginForm(props) {
+const LoginForm = (props) => {
 
     const navigate = useNavigate()
     const button = useRef()
@@ -23,23 +23,17 @@ function LoginForm(props) {
     }
 
     function enterTheAccount(e) {
-
         e.preventDefault()
-
         loaderIcon(button.current, setShowLoader)
-
         const user = { email, password }
-
         const options = {
-            method: 'POST', 
-            headers: {'Content-Type': 'application/json'}, 
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
         }
-
         fetch('http://localhost:8080/login', options)
             .then(res => formFetch(res, navigate, button.current, setShowLoader, setUser))
             .catch(err => alert(err))
-
     }
 
     return (

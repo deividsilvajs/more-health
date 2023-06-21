@@ -12,8 +12,8 @@ const Informations = ({ user }) => {
                 <h5>Água Diária: {user.water()}ml</h5>
             </div>
         </div>
-    );
+    )
 
-};
+}
 
-export default Informations;
+export default Informations

@@ -1,10 +1,10 @@
-import { createContext } from 'react';
+import { createContext } from 'react'
 
-export const UserContext = createContext();
+export const UserContext = createContext()
 
-export function UserProvider(props) {
+export const UserProvider = (props) => {
 
-    const [user, setUser] = props.userState;
+    const [user, setUser] = props.userState
 
     return (
         <UserContext.Provider value={[user, setUser]}>
@@ -12,4 +12,4 @@ export function UserProvider(props) {
         </UserContext.Provider>
     )
 
-};
+}
