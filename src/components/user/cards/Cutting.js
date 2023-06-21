@@ -1,9 +1,4 @@
-import { useContext } from 'react';
-import { UserContext } from '../../../User/UserContext';
-
-function Cutting() {
-
-    const [user] = useContext(UserContext);
+const Cutting = ({ user }) => {
 
     return (
         <div className='card w-75 p-4 my-3 text-bg-danger'>
@@ -25,8 +20,8 @@ function Cutting() {
                 </div>
             </div>
         </div>
-    );
+    )
 
-};
+}
 
-export default Cutting;
+export default Cutting

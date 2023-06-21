@@ -16,7 +16,7 @@ function App() {
                 <UserProvider userState={[user, setUser]}>
                     <Routes>
                         <Route path='/' element={<MainPage />} />
-                        <Route path='/userPage/:id' element={<UserPage />} />
+                        <Route path='/userPage' element={<UserPage />} />
                     </Routes>
                 </UserProvider>
             </Router>

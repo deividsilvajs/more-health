@@ -1,28 +1,19 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Content from '../components/user/Content';
-import User from '../User/User';
+import { useContext } from 'react'
+import { UserContext } from '../User/UserContext'
+import Informations from '../components/user/cards/Informations'
+import Bulking from '../components/user/cards/Bulking'
+import Cutting from '../components/user/cards/Cutting'
 
-function Page() {
+const Page = () => {
 
-    const { id } = useParams();
-
-    const [user, setUser] = useState({});
-    const [showContent, setShowContent] = useState(false);
-
-    useEffect(() => {
-        fetch(`http://localhost:8080/getUser/${id}`)
-            .then(res => res.json())
-            .then(doc => {
-                const user = new User(doc);
-                setUser(user);
-                setShowContent(true);
-            });
-    }, [user, id]);
+    const [user] = useContext(UserContext)
 
     return (
-        <div>
-            {showContent ? <Content userState={[user, setUser]} /> : null}
+        <div className='container d-flex flex-column align-items-center'>
+            <Informations user={user} />
+            <h3>Recomendação Diária</h3>
+            <Bulking user={user} />
+            <Cutting user={user} />
         </div>
     );
 

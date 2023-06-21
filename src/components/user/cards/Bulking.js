@@ -1,9 +1,4 @@
-import { useContext } from 'react';
-import { UserContext } from '../../../User/UserContext';
-
-function Bulking() {
-
-    const [user] = useContext(UserContext);
+const Bulking = ({ user }) => {
 
     return (
         <div className='card w-75 p-4 my-3 text-bg-success'>
@@ -25,8 +20,8 @@ function Bulking() {
                 </div>
             </div>
         </div>
-    );
+    )
 
-};
+}
 
-export default Bulking;
+export default Bulking

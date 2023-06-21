@@ -1,4 +1,5 @@
 import { defaultButton } from './icons-buttons'
+import User from '../User/User'
 
 export const formFetch = (res, navigate, button, setShowLoader, setUser) => {
 
@@ -6,8 +7,10 @@ export const formFetch = (res, navigate, button, setShowLoader, setUser) => {
         res.json().then(doc => {
             let { _id, __v,...user } = doc
             user.id = _id
+            // Criando usuário que será usado em todo o programa
+            user = new User(user)
             setUser(user)
-            // navigate(`/userPage/${id}`)
+            navigate('/userPage')
         })
     } else {
         setTimeout(() => {
