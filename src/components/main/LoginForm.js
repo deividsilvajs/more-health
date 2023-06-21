@@ -1,9 +1,9 @@
 import { useState, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Loader } from 'lucide-react'
-import { loaderIcon } from '../../../formUtils/icons-buttons'
-import { formFetch } from '../../../formUtils/formFetch'
-import { UserContext } from '../../../User/UserContext'
+import { loaderIcon } from '../../formUtils/icons-buttons'
+import { formFetch } from '../../formUtils/formFetch'
+import { UserContext } from '../../User/UserContext'
 
 function LoginForm(props) {
 
