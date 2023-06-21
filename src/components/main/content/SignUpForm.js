@@ -1,41 +1,44 @@
-import { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Loader } from 'lucide-react';
-import { loaderIcon } from '../../../formUtils/icons-buttons';
-import { formFetch } from '../../../formUtils/formFetch';
+import { useState, useRef, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Loader } from 'lucide-react'
+import { UserContext } from '../../../User/UserContext'
+import { loaderIcon } from '../../../formUtils/icons-buttons'
+import { formFetch } from '../../../formUtils/formFetch'
 
 function SignUpForm(props) {
 
-    const navigate = useNavigate();
-    const button = useRef();
+    const navigate = useNavigate()
+    const button = useRef()
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [weight, setWeight] = useState('');
-    const [height, setHeight] = useState('');
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [weight, setWeight] = useState('')
+    const [height, setHeight] = useState('')
 
-    const [showLoader, setShowLoader] = useState(false);
+    const [, setUser] = useContext(UserContext)
+
+    const [showLoader, setShowLoader] = useState(false)
 
     function hideSignUp(e) {
         if (e.target.classList[0] === 'form') {
-            props.hideSignUp();
-        };
-    };
+            props.hideSignUp()
+        }
+    }
 
     function createAccount(e) {
-        e.preventDefault();
-        loaderIcon(button.current, setShowLoader);
-        const user = { name, email, password, weight, height };
+        e.preventDefault()
+        loaderIcon(button.current, setShowLoader)
+        const user = { name, email, password, weight, height }
         const options = {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(user)
-        };
+        }
         fetch('http://localhost:8080/signUp', options)
-            .then(res => formFetch(res, navigate, button.current, setShowLoader))
-            .catch(err => alert(err));
-    };
+            .then(res => formFetch(res, navigate, button.current, setShowLoader, setUser))
+            .catch(err => alert(err))
+    }
 
     return (
         <div className='form' onClick={e => hideSignUp(e)}>
@@ -68,8 +71,8 @@ function SignUpForm(props) {
                 </div>
             </form>
         </div>
-    );
+    )
 
-};
+}
 
-export default SignUpForm;
+export default SignUpForm

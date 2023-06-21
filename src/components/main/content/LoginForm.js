@@ -18,7 +18,7 @@ function LoginForm(props) {
 
     function hideLogin(e) {
         if (e.target.classList[0] === 'form') {
-            props.hideLogin();
+            props.hideLogin()
         }
     }
 

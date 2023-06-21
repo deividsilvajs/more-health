@@ -1,10 +1,10 @@
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import MainPage from './pages/Main'
 import UserPage from './pages/User'
 import { UserProvider } from './User/UserContext'
-import { useState } from 'react'
 
 function App() {
 
