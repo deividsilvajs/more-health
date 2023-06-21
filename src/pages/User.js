@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { UserContext } from '../User/UserContext'
-import Informations from '../components/user/cards/Informations'
-import Bulking from '../components/user/cards/Bulking'
-import Cutting from '../components/user/cards/Cutting'
+import Informations from '../components/user/Informations'
+import Bulking from '../components/user/Bulking'
+import Cutting from '../components/user/Cutting'
 
 const Page = () => {
 
