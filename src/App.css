@@ -8,6 +8,8 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 h1,
 h2,
 h3,
@@ -23,8 +25,8 @@ h6 {
   background: linear-gradient(white, rgb(245, 245, 245), white);
 }
 
-h1 {
-  font-family: 'Oswald', sans-serif;
+.logo {
+  font-family: 'Roboto Mono', monospace;
 }
 
 .form {

@@ -5,7 +5,7 @@ const Informations = ({ user }) => {
     return (
         <div className='card w-75 p-4 my-3'>
             <div className='card-header d-flex justify-content-between align-items-center'>
-                <h3>More Health</h3>
+                <h3 className='logo'>More Health</h3>
                 <User />
             </div>
             <div className='card-body d-flex flex-column'>

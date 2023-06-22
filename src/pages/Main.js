@@ -20,7 +20,7 @@ const Main = () => {
 
     return (
         <div id='content' className='d-flex flex-column align-items-center justify-content-center'>
-            <h1>More Health</h1>
+            <h1 className='logo'>More Health</h1>
             <About />
             <Buttons showLogin={changeLoginState} showSignUp={changeSignUpState} />
             {showLogin ? <LoginForm hideLogin={changeLoginState} /> : null}
