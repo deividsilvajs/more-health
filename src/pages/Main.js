@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import About from '../components/main/About'
 import Buttons from '../components/main/Buttons'
-import LoginForm from '../components/main/LoginForm'
-import SignUpForm from '../components/main/SignUpForm'
+import LoginForm from '../components/main/forms/LoginForm'
+import SignUpForm from '../components/main/forms/SignUpForm'
 
 const Main = () => {
 
