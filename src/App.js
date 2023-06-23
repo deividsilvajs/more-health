@@ -5,7 +5,7 @@ import './App.css'
 import MainPage from './pages/Main'
 import UserPage from './pages/User'
 import Private from './Private'
-import { UserProvider } from './User/UserContext'
+import UserProvider from './User/UserContext'
 
 const App = () => {
 
