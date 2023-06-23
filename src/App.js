@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import MainPage from './pages/Main'
 import UserPage from './pages/User'
+import Private from './Private'
 import { UserProvider } from './User/UserContext'
 
 const App = () => {
@@ -16,7 +17,9 @@ const App = () => {
                 <UserProvider userState={[user, setUser]}>
                     <Routes>
                         <Route path='/' element={<MainPage />} />
-                        <Route path='/userPage' element={<UserPage />} />
+                        <Route element={<Private />}>
+                            <Route path='/userPage' element={<UserPage />} />
+                        </Route>
                     </Routes>
                 </UserProvider>
             </Router>
