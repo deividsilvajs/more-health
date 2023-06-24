@@ -1,4 +1,11 @@
-const Cutting = ({ user }) => {
+import React from 'react'
+import { User } from '../../User/IUser'
+
+interface Props {
+    user: User
+}
+
+const Cutting = ({ user }: Props) => {
 
     return (
         <div className='card w-75 p-4 my-3 text-bg-danger'>
