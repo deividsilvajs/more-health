@@ -1,3 +1,7 @@
+import { Dispatch, SetStateAction } from 'react'
+
+export type UserState = [User, Dispatch<SetStateAction<User>>]
+
 export type MetricsValues = [number, number]
 
 export interface Person {

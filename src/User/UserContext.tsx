@@ -1,7 +1,5 @@
-import React, { ReactNode, createContext, Dispatch, SetStateAction } from 'react'
-import { User } from './IUser'
-
-type UserState = [User, Dispatch<SetStateAction<User>>]
+import React, { ReactNode, createContext } from 'react'
+import { UserState } from './IUser'
 
 interface Props {
     userState: UserState
