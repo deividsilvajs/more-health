@@ -5,10 +5,8 @@ export const formFetch = (res, navigate, button, setShowLoader, setUser) => {
 
     if (res.status === 200) {
         res.json().then(doc => {
-            let { _id, __v, ...user } = doc
-            user.id = _id
             // Criando usuário que será usado em todo o programa
-            user = new User(user)
+            const user = new User(doc)
             setUser(user)
             navigate('/userPage')
         })
