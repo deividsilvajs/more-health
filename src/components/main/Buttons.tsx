@@ -5,9 +5,7 @@ interface Props {
     showSignUp: VoidFunction
 }
 
-const Buttons = (props: Props) => {
-
-    const { showLogin, showSignUp } = props
+const Buttons = ({ showLogin, showSignUp }: Props) => {
 
     return (
         <div className='d-flex flex-column'>
