@@ -1,6 +1,12 @@
+import React from 'react'
 import { User } from 'lucide-react'
+import {User as IUser} from '../../User/IUser'
 
-const Informations = ({ user }) => {
+interface Props {
+    user: IUser
+}
+
+const Informations = ({ user }: Props) => {
 
     return (
         <div className='card w-75 p-4 my-3'>
