@@ -1,9 +1,5 @@
 import React from 'react'
-import { User } from '../../User/IUser'
-
-interface Props {
-    user: User
-}
+import { CardsProps as Props } from '../../User/IUser'
 
 const Cutting = ({ user }: Props) => {
 

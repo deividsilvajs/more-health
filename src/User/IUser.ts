@@ -20,3 +20,7 @@ export interface User extends Person {
     cuttingProt: () => MetricsValues
     cuttingFat: () => MetricsValues
 }
+
+export interface CardsProps {
+    user: User
+}

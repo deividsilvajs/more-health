@@ -1,10 +1,6 @@
 import React from 'react'
 import { User } from 'lucide-react'
-import {User as IUser} from '../../User/IUser'
-
-interface Props {
-    user: IUser
-}
+import { CardsProps as Props } from '../../User/IUser'
 
 const Informations = ({ user }: Props) => {
 
