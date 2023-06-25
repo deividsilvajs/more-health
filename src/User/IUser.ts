@@ -2,7 +2,11 @@ import { Dispatch, SetStateAction } from 'react'
 
 export type UserState = [User, Dispatch<SetStateAction<User>>]
 
+export type SetUser = Dispatch<SetStateAction<User>>
+
 export type MetricsValues = [number, number]
+
+export type Navigate = (path: string) => void
 
 export interface Person {
     name: string

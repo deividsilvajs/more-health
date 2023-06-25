@@ -6,8 +6,6 @@ export type Button = ButtonHTMLAttributes<HTMLElement> & {
 
 export type SetShowLoader = Dispatch<SetStateAction<Boolean>>
 
-export type SetUser = Dispatch<SetStateAction<Object>>
-
 export const loaderIcon = (button: Button, setShowLoader: SetShowLoader) => {
     button.style.display = 'none'
     setShowLoader(true)

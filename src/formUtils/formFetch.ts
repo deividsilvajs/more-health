@@ -1,6 +1,6 @@
-import { defaultButton, Button, SetShowLoader, SetUser } from './icons-buttons'
+import { defaultButton, Button, SetShowLoader } from './icons-buttons'
 import User from '../User/User'
-import { Person } from '../User/IUser'
+import { Person, Navigate, SetUser } from '../User/IUser'
 
 interface Res {
     status: number
@@ -8,9 +8,8 @@ interface Res {
     text: () => Promise<string>
 }
 
-type Navigate = (path: string) => void
-
-export const formFetch = (res: Res, navigate: Navigate, button: Button, setShowLoader: SetShowLoader, setUser: SetUser) => {
+export const formFetch = (res: Res, navigate: Navigate, button: Button, 
+    setShowLoader: SetShowLoader, setUser: SetUser) => {
 
     if (res.status === 200) {
         res.json().then((doc: Person) => {
