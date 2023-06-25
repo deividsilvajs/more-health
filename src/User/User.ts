@@ -1,6 +1,6 @@
-import { Person, MetricsValues } from './IUser'
+import { Person, User as IUser, MetricsValues } from './IUser'
 
-export default class User {
+export default class User implements IUser {
 
     name: string
     weight: number
