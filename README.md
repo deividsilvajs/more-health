@@ -19,7 +19,7 @@ Informações sobre o backend [aqui](https://github.com/deividsilvajs/more-healt
 Abra o terminal no diretório de sua preferência e execute os seguintes comandos:
 
 ```bash
-git clone -b 1.1.0 https://github.com/deividsilvajs/more-health
+git clone https://github.com/deividsilvajs/more-health.git
 cd more-health
 npm install
 ```
