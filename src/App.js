@@ -6,10 +6,20 @@ import MainPage from './pages/Main'
 import UserPage from './pages/User'
 import Private from './Private'
 import UserProvider from './User/UserContext'
+import User from './User/User'
 
 const App = () => {
 
-    const [user, setUser] = useState({})
+    const savedUser = () => {
+        const value = sessionStorage.getItem('user')
+        if (value) {
+            return new User(JSON.parse(value))
+        } else {
+            return {}
+        }
+    }
+
+    const [user, setUser] = useState(savedUser())
 
     return (
         <div>

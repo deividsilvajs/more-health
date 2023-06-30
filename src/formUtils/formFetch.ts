@@ -13,6 +13,7 @@ export const formFetch = (res: Res, navigate: Navigate, button: Button,
 
     if (res.status === 200) {
         res.json().then((doc: Person) => {
+            sessionStorage.setItem('user', JSON.stringify(doc))
             // Criando usuário que será usado em todo o programa
             const user = new User(doc)
             setUser(user)
