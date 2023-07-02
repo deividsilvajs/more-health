@@ -1,18 +1,10 @@
-import { defaultButton, Button, SetShowLoader } from './icons-buttons'
+import { defaultButton } from './icons-buttons'
 import User from '../User/User'
-import { Person, Navigate, SetUser } from '../User/IUser'
 
-interface Res {
-    status: number
-    json: () => Promise<Person>
-    text: () => Promise<string>
-}
-
-export const formFetch = (res: Res, navigate: Navigate, button: Button, 
-    setShowLoader: SetShowLoader, setUser: SetUser) => {
+export const formFetch = (res, navigate, button, setShowLoader, setUser) => {
 
     if (res.status === 200) {
-        res.json().then((doc: Person) => {
+        res.json().then(doc => {
             sessionStorage.setItem('user', JSON.stringify(doc))
             // Criando usuário que será usado em todo o programa
             const user = new User(doc)
@@ -21,7 +13,7 @@ export const formFetch = (res: Res, navigate: Navigate, button: Button,
         })
     } else {
         setTimeout(() => {
-            res.text().then((text: string) => {
+            res.text().then(text => {
                 alert(text)
                 defaultButton(button, setShowLoader)
             })
