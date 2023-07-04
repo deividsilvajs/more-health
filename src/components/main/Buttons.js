@@ -1,11 +1,4 @@
-import React from 'react'
-
-interface Props {
-    showLogin: VoidFunction
-    showSignUp: VoidFunction
-}
-
-const Buttons = ({ showLogin, showSignUp }: Props) => {
+const Buttons = ({ showLogin, showSignUp }) => {
 
     return (
         <div className='d-flex flex-column'>

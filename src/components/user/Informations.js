@@ -1,7 +1,4 @@
-import React from 'react'
-import { CardsProps as Props } from '../../User/IUser'
-
-const Informations = ({ user }: Props) => {
+const Informations = ({ user }) => {
 
     return (
         <div className='card w-75 p-4 my-3'>
