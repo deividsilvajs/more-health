@@ -1,6 +1,12 @@
-export default class User {
+import { Person, User as IUser } from '../IUser/User'
 
-    constructor({ name, weight, height }) {
+class User implements IUser {
+
+    name: string
+    weight: number
+    height: number
+
+    constructor({ name, weight, height }: Person) {
         this.name = name
         this.weight = weight
         this.height = height
@@ -54,3 +60,5 @@ export default class User {
     }
 
 }
+
+export default User
