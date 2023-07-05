@@ -1,14 +1,15 @@
-import { useState, useRef, useContext } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Loader } from 'lucide-react'
 import { UserContext } from '../../../User/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
-import { formFetch } from '../../../formUtils/formFetch'
+import { formFetch } from '../../../formUtils/fetch'
+import { Button, Props } from '../../../formUtils/Types'
 
-const LoginForm = (props) => {
+const LoginForm = ({ hide }: Props) => {
 
     const navigate = useNavigate()
-    const button = useRef()
+    const button = useRef<Button>(null)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -16,13 +17,14 @@ const LoginForm = (props) => {
 
     const [, setUser] = useContext(UserContext)
 
-    function hideLogin(e) {
-        if (e.target.classList[0] === 'form') {
-            props.hideLogin()
+    function hideLogin(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        const target = e.target as HTMLDivElement
+        if (target.classList[0] === 'form') {
+            hide()
         }
     }
 
-    function enterTheAccount(e) {
+    function enterTheAccount(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         loaderIcon(button.current, setShowLoader)
         const user = { email, password }

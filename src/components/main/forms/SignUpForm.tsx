@@ -1,14 +1,15 @@
-import { useState, useRef, useContext } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Loader } from 'lucide-react'
 import { UserContext } from '../../../User/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
-import { formFetch } from '../../../formUtils/formFetch'
+import { formFetch } from '../../../formUtils/fetch'
+import { Button, Props } from '../../../formUtils/Types'
 
-const SignUpForm = (props) => {
+const SignUpForm = ({hide}: Props) => {
 
     const navigate = useNavigate()
-    const button = useRef()
+    const button = useRef<Button>(null)
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -20,13 +21,14 @@ const SignUpForm = (props) => {
 
     const [showLoader, setShowLoader] = useState(false)
 
-    function hideSignUp(e) {
-        if (e.target.classList[0] === 'form') {
-            props.hideSignUp()
+    function hideSignUp(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        const target = e.target as HTMLDivElement
+        if (target.classList[0] === 'form') {
+            hide()
         }
     }
 
-    function createAccount(e) {
+    function createAccount(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         loaderIcon(button.current, setShowLoader)
         const user = { name, email, password, weight, height }

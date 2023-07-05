@@ -23,8 +23,8 @@ const Main = () => {
             <h1 className='logo'>More Health</h1>
             <About />
             <Buttons showLogin={changeLoginState} showSignUp={changeSignUpState} />
-            {showLogin ? <LoginForm hideLogin={changeLoginState} /> : null}
-            {showSignUp ? <SignUpForm hideSignUp={changeSignUpState} /> : null}
+            {showLogin ? <LoginForm hide={changeLoginState} /> : null}
+            {showSignUp ? <SignUpForm hide={changeSignUpState} /> : null}
         </div>
     )
 
