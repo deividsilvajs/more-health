@@ -61,4 +61,6 @@ class User implements IUser {
 
 }
 
+export const DEFAULT_USER = new User({name: '', weight: 0, height: 0})
+
 export default User

@@ -9,7 +9,7 @@ export const loaderIcon = (button: Button, setShowLoader: SetShowLoader) => {
 
 export const defaultButton = (button: Button, setShowLoader: SetShowLoader) => {
     if (button) {
-        button.style.display = 'none'
-        setShowLoader(true)
+        button.style.display = 'block'
+        setShowLoader(false)
     }
 }

@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../User/UserContext'
 import Informations from '../components/user/Informations'
 import Bulking from '../components/user/Bulking'

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
@@ -6,7 +6,7 @@ import MainPage from './pages/Main'
 import UserPage from './pages/User'
 import Private from './Private'
 import UserProvider from './User/UserContext'
-import User from './User/User'
+import User, { DEFAULT_USER } from './User/User'
 
 const App = () => {
 
@@ -15,7 +15,7 @@ const App = () => {
         if (value) {
             return new User(JSON.parse(value))
         } else {
-            return {}
+            return DEFAULT_USER
         }
     }
 
