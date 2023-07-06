@@ -1,4 +1,7 @@
-const Bulking = ({ user }) => {
+import React from 'react'
+import { Props } from './CardsProps'
+
+const Bulking = ({ user }: Props) => {
 
     return (
         <div className='card w-75 p-4 my-3 text-bg-success'>
