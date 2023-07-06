@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Loader } from 'lucide-react'
 import { UserContext } from '../../../User/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
-import { formFetch } from '../../../formUtils/fetch'
+import create from '../../../formUtils/enterOrCreate'
 import { Button, Props } from '../../../formUtils/Types'
 
 const SignUpForm = ({hide}: Props) => {
@@ -32,14 +32,8 @@ const SignUpForm = ({hide}: Props) => {
         e.preventDefault()
         loaderIcon(button.current, setShowLoader)
         const user = { name, email, password, weight, height }
-        const options = {
-            method: 'POST', 
-            headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(user)
-        }
-        fetch('http://localhost:8080/signUp', options)
-            .then(res => formFetch(res, navigate, button.current, setShowLoader, setUser))
-            .catch(err => alert(err))
+        const uri = 'http://localhost:8080/signUp'
+        create(user, uri, setUser, navigate, button.current, setShowLoader)
     }
 
     return (

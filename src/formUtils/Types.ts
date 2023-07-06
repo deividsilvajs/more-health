@@ -9,3 +9,13 @@ export type Button = HTMLButtonElement & {
 } | null
 
 export type SetShowLoader = React.Dispatch<SetStateAction<boolean>>
+
+export type Navigate = (path: string) => void
+
+export interface Account {
+    name?: string
+    email: string
+    password: string
+    weight?: string
+    height?: string
+}
