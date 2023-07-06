@@ -1,4 +1,4 @@
-import { Person, User as IUser } from '../IUser/User'
+import { Person, User as IUser } from '../Types/User'
 
 class User implements IUser {
 

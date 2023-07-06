@@ -4,7 +4,7 @@ import { Loader } from 'lucide-react'
 import { UserContext } from '../../../User/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
 import enter from '../../../formUtils/enterOrCreate'
-import { Button, Props } from '../../../formUtils/Types'
+import { Button, Props } from '../../../Types/Form'
 
 const LoginForm = ({ hide }: Props) => {
 

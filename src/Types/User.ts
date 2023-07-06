@@ -1,3 +1,5 @@
+import { SetStateAction } from 'react'
+
 export interface Person {
     name: string
     weight: number
@@ -16,3 +18,7 @@ export interface User extends Person {
     cuttingProt: Metrics
     cuttingFat: Metrics
 }
+
+export type SetUser = React.Dispatch<SetStateAction<User>>
+
+export type UserState = [User, SetUser]
