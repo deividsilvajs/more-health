@@ -1,5 +1,5 @@
 import React from 'react'
-import { Props } from './CardsProps'
+import { Props } from '../../types/cardsProps'
 
 const Cutting = ({ user }: Props) => {
 

@@ -4,6 +4,7 @@ import { Loader } from 'lucide-react'
 import { UserContext } from '../../../user/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
 import enter from '../../../formUtils/enterOrCreate'
+import hideForm from '../../../formUtils/hideForm'
 import { Button, Props } from '../../../types/form'
 
 const LoginForm = ({ hide }: Props) => {
@@ -17,13 +18,6 @@ const LoginForm = ({ hide }: Props) => {
 
     const [, setUser] = useContext(UserContext)
 
-    function hideLogin(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-        const target = e.target as HTMLDivElement
-        if (target.classList[0] === 'form') {
-            hide()
-        }
-    }
-
     function enterTheAccount(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         loaderIcon(button.current, setShowLoader)
@@ -33,7 +27,7 @@ const LoginForm = ({ hide }: Props) => {
     }
 
     return (
-        <div className='form' onClick={e => hideLogin(e)}>
+        <div className='form' onClick={e => hideForm(e, hide)}>
             <form onSubmit={e => enterTheAccount(e)}>
                 <div className='d-flex flex-column card p-5'>
                     <div className='input-group mb-2'>

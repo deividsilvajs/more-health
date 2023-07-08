@@ -1,4 +1,4 @@
-import { User } from '../../types/user'
+import { User } from './user'
 
 export interface Props {
     user: User
