@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode } from 'react'
-import { UserState } from '../Types/User'
-import { DEFAULT_USER } from '../User/User'
+import { UserState } from '../types/user'
+import { DEFAULT_USER } from '../user/user'
 
 export const UserContext = createContext<UserState>([DEFAULT_USER, () => {}])
 

@@ -1,10 +1,10 @@
 import React, { useState, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Loader } from 'lucide-react'
-import { UserContext } from '../../../User/UserContext'
+import { UserContext } from '../../../user/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
 import create from '../../../formUtils/enterOrCreate'
-import { Button, Props } from '../../../Types/Form'
+import { Button, Props } from '../../../types/form'
 
 const SignUpForm = ({hide}: Props) => {
 

@@ -1,7 +1,7 @@
 import { defaultButton } from './icons-buttons'
-import User from '../User/User'
-import { SetUser } from '../Types/User'
-import { Button, SetShowLoader, Navigate, Account } from '../Types/Form'
+import User from '../user/user'
+import { SetUser } from '../types/user'
+import { Button, SetShowLoader, Navigate, Account } from '../types/form'
 
 const enterOrCreate = (user: Account, uri: string, setUser: SetUser, navigate: Navigate, 
     button: Button, setShowLoader: SetShowLoader) => {

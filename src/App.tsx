@@ -5,8 +5,8 @@ import './App.css'
 import MainPage from './pages/Main'
 import UserPage from './pages/User'
 import Private from './Private'
-import UserProvider from './User/UserContext'
-import User, { DEFAULT_USER } from './User/User'
+import UserProvider from './user/UserContext'
+import User, { DEFAULT_USER } from './user/user'
 
 const App = () => {
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../User/UserContext'
+import { UserContext } from '../user/UserContext'
 import Informations from '../components/user/Informations'
 import Bulking from '../components/user/Bulking'
 import Cutting from '../components/user/Cutting'

@@ -1,4 +1,4 @@
-import { Button, SetShowLoader } from '../Types/Form'
+import { Button, SetShowLoader } from '../types/form'
 
 export const loaderIcon = (button: Button, setShowLoader: SetShowLoader) => {
 
