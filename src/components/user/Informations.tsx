@@ -2,13 +2,17 @@ import React from 'react'
 import { Props } from '../../types/cardsProps'
 import { User as UserIcon } from 'lucide-react'
 
-const Informations = ({ user }: Props) => {
+interface CustomProps extends Props {
+    showEditAccount: () => void
+}
+
+const Informations = ({ user, showEditAccount }: CustomProps) => {
 
     return (
         <div className='card w-75 p-4 my-3'>
             <div className='card-header d-flex justify-content-between align-items-center'>
                 <h3>Olá, {user.name}</h3>
-                <button className='btn'>
+                <button onClick={() => showEditAccount()} className='btn'>
                     <UserIcon />
                 </button>
             </div>
