@@ -1,6 +1,6 @@
 import { defaultButton } from './icons-buttons'
 import User from '../user/user'
-import { SetUser } from '../types/user'
+import { Person, SetUser } from '../types/user'
 import { Button, SetShowLoader, Navigate, Account } from '../types/form'
 
 const enterOrCreate = (user: Account, uri: string, setUser: SetUser, navigate: Navigate, 
@@ -15,7 +15,7 @@ const enterOrCreate = (user: Account, uri: string, setUser: SetUser, navigate: N
     fetch(uri, options)
         .then(res => {
             if (res.status === 200) {
-                res.json().then(doc => {
+                res.json().then((doc: Person) => {
                     sessionStorage.setItem('user', JSON.stringify(doc))
                     // Criando usuário que será usado em todo o programa
                     const user = new User(doc)

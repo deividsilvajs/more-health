@@ -2,11 +2,13 @@ import { Person, User as IUser } from '../types/user'
 
 class User implements IUser {
 
+    email: string
     name: string
     weight: number
     height: number
 
-    constructor({ name, weight, height }: Person) {
+    constructor({ email, name, weight, height }: Person) {
+        this.email = email
         this.name = name
         this.weight = weight
         this.height = height
@@ -61,6 +63,6 @@ class User implements IUser {
 
 }
 
-export const DEFAULT_USER = new User({name: '', weight: 0, height: 0})
+export const DEFAULT_USER = new User({ email: '', name: '', weight: 0, height: 0 })
 
 export default User
