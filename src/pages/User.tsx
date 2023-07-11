@@ -7,7 +7,7 @@ import EditAccountForm from '../components/user/EditAccountForm'
 
 const User = () => {
 
-    const [user] = useContext(UserContext)
+    const [user, setUser] = useContext(UserContext)
 
     const [showEditAccount, setShowEditAccount] = useState(false)
 
@@ -21,7 +21,7 @@ const User = () => {
             <h3>Recomendação Diária</h3>
             <Bulking user={user} />
             <Cutting user={user} />
-            {showEditAccount ? <EditAccountForm hide={changeEditAccountState} /> : null}
+            {showEditAccount ? <EditAccountForm userState={[user, setUser]} hide={changeEditAccountState} /> : null}
         </div>
     )
 
