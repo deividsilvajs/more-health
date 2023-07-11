@@ -29,6 +29,7 @@ const EditAccountForm = ({ hide, userState }: CustomProps) => {
 
         const updatedUser = new User(account)
         setUser(updatedUser)
+        sessionStorage.setItem('user', JSON.stringify(updatedUser))
 
         hide()
 
