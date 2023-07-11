@@ -27,9 +27,9 @@ const EditAccountForm = ({ hide, userState }: CustomProps) => {
         weight ? account.weight = weightFormat(weight) : account.weight = user.weight
         height ? account.height = heightFormat(height, user) : account.height = user.height
 
+        sessionStorage.setItem('user', JSON.stringify(account))
         const updatedUser = new User(account)
         setUser(updatedUser)
-        sessionStorage.setItem('user', JSON.stringify(updatedUser))
 
         hide()
 
