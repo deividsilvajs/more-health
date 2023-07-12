@@ -33,7 +33,7 @@ const SignUpForm = ({ hide }: Props) => {
     return (
         <div className='form' onClick={e => hideForm(e, hide)}>
             <form onSubmit={e => createAccount(e)}>
-                <div className='d-flex flex-column card p-5'>
+                <div className='d-flex flex-column card p-4'>
                     <div className='input-group mb-2'>
                         <label className='input-group-text'>Nome</label>
                         <input onChange={e => setName(e.target.value)} className='form-control' type='text' required />
@@ -42,21 +42,21 @@ const SignUpForm = ({ hide }: Props) => {
                         <label className='input-group-text'>E-mail</label>
                         <input onChange={e => setEmail(e.target.value)} className='form-control' type='email' required />
                     </div>
-                    <div className='input-group mb-2'>
+                    <div className='input-group'>
                         <label className='input-group-text'>Senha</label>
                         <input onChange={e => setPassword(e.target.value)} className='form-control' type='password' required />
                     </div>
-                    <div className='d-flex justify-content-around'>
-                        <div className='mb-2 d-flex flex-column align-items-center'>
+                    <div className='d-flex justify-content-around my-4'>
+                        <div className='d-flex flex-column align-items-center'>
                             <label>Peso</label>
                             <input onChange={e => setWeight(e.target.value)} className='w-25' type='text' required />
                         </div>
-                        <div className='mb-3 d-flex flex-column align-items-center'>
+                        <div className='d-flex flex-column align-items-center'>
                             <label>Altura (cm)</label>
                             <input onChange={e => setHeight(e.target.value)} className='w-25' type='text' required />
                         </div>
                     </div>
-                    <button ref={button} className='btn btn-primary align-self-center' type='submit'>Cadastrar</button>
+                    <button ref={button} className='btn btn-outline-primary' type='submit'>Cadastrar</button>
                     {showLoader ? <Loader className='align-self-center loader' /> : null}
                 </div>
             </form>

@@ -29,7 +29,7 @@ const LoginForm = ({ hide }: Props) => {
     return (
         <div className='form' onClick={e => hideForm(e, hide)}>
             <form onSubmit={e => enterTheAccount(e)}>
-                <div className='d-flex flex-column card p-5'>
+                <div className='d-flex flex-column card p-4'>
                     <div className='input-group mb-2'>
                         <label className='input-group-text'>E-mail</label>
                         <input onChange={e => setEmail(e.target.value)} className='form-control' type='email' required />
@@ -38,7 +38,7 @@ const LoginForm = ({ hide }: Props) => {
                         <label className='input-group-text'>Senha</label>
                         <input onChange={e => setPassword(e.target.value)} className='form-control' type='password' required />
                     </div>
-                    <button ref={button} className='btn btn-primary align-self-center' type='submit'>Entrar</button>
+                    <button ref={button} className='btn btn-outline-primary' type='submit'>Entrar</button>
                     {showLoader ? <Loader className='align-self-center loader' /> : null}
                 </div>
             </form>

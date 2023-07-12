@@ -39,8 +39,8 @@ const EditAccountForm = ({ hide }: Props) => {
     return (
         <div onClick={e => hideForm(e, hide)} className='form'>
             <form onSubmit={e => updateAccount(e)}>
-                <div className='card py-3 d-flex flex-column align-items-center'>
-                    <div className='input-group w-50'>
+                <div className='card p-4 d-flex flex-column'>
+                    <div className='input-group'>
                         <label className='input-group-text'>Nome</label>
                         <input onChange={e => setName(e.target.value)} className='form-control' type='text' />
                     </div>
@@ -54,7 +54,7 @@ const EditAccountForm = ({ hide }: Props) => {
                             <input onChange={e => setHeight(e.target.value)} className='w-25' type='text' />
                         </div>
                     </div>
-                    <button className='btn btn-primary'>Confirmar</button>
+                    <button className='btn btn-outline-primary'>Confirmar</button>
                 </div>
             </form>
         </div>
