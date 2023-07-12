@@ -1,4 +1,4 @@
-import { User } from '../types/user'
+import { User, Person } from '../types/user'
 
 export const weightFormat = (weight: string) => {
     if (weight.includes(',')) {
@@ -18,3 +18,18 @@ export const heightFormat = (height: string, user: User) => {
         return Number(height)
     }
 }
+
+const updateUser = (user: User, name: string, weight: string, height: string) => {
+
+    const account = {} as Person
+    
+    account.email = user.email
+    name ? account.name = name : account.name = user.name
+    weight ? account.weight = weightFormat(weight) : account.weight = user.weight
+    height ? account.height = heightFormat(height, user) : account.height = user.height
+
+    return account
+
+}
+
+export default updateUser

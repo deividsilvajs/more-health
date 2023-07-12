@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import hideForm from '../../formUtils/hideForm'
 import { Props } from '../../types/form'
-import { UserState, Person } from '../../types/user'
+import { UserState } from '../../types/user'
 import User from '../../user/user'
-import { weightFormat, heightFormat } from '../../formUtils/updateUser'
+import updateUser from '../../formUtils/updateUser'
 
 interface CustomProps extends Props {
     userState: UserState
@@ -21,15 +21,20 @@ const EditAccountForm = ({ hide, userState }: CustomProps) => {
 
         e.preventDefault()
 
-        const account = {} as Person
-
-        name ? account.name = name : account.name = user.name
-        weight ? account.weight = weightFormat(weight) : account.weight = user.weight
-        height ? account.height = heightFormat(height, user) : account.height = user.height
+        const account = updateUser(user, name, weight, height)
 
         sessionStorage.setItem('user', JSON.stringify(account))
         const updatedUser = new User(account)
         setUser(updatedUser)
+
+        const options = {
+            method: 'put',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(account)
+        }
+
+        // Atualizando usuário no banco de dados
+        fetch('http://localhost:8080/update', options)
 
         hide()
 
