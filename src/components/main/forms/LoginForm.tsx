@@ -5,7 +5,7 @@ import { UserContext } from '../../../user/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
 import enter from '../../../formUtils/enterOrCreate'
 import hideForm from '../../../formUtils/hideForm'
-import { Button, Props } from '../../../types/form'
+import { Button, FormEvent, Props } from '../../../types/form'
 
 const LoginForm = ({ hide }: Props) => {
 
@@ -18,7 +18,7 @@ const LoginForm = ({ hide }: Props) => {
 
     const [, setUser] = useContext(UserContext)
 
-    function enterTheAccount(e: React.FormEvent<HTMLFormElement>) {
+    function enterTheAccount(e: FormEvent) {
         e.preventDefault()
         loaderIcon(button.current, setShowLoader)
         const user = { email, password }

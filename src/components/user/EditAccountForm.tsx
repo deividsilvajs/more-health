@@ -1,23 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import hideForm from '../../formUtils/hideForm'
-import { Props } from '../../types/form'
-import { UserState } from '../../types/user'
+import { FormEvent, Props } from '../../types/form'
 import User from '../../user/user'
 import updateUser from '../../formUtils/updateUser'
+import { UserContext } from '../../user/UserContext'
 
-interface CustomProps extends Props {
-    userState: UserState
-}
+const EditAccountForm = ({ hide }: Props) => {
 
-const EditAccountForm = ({ hide, userState }: CustomProps) => {
-
-    const [user, setUser] = userState
+    const [user, setUser] = useContext(UserContext)
 
     const [name, setName] = useState('')
     const [weight, setWeight] = useState('')
     const [height, setHeight] = useState('')
 
-    const updateAccount = (e: React.FormEvent<HTMLFormElement>) => {
+    const updateAccount = (e: FormEvent) => {
 
         e.preventDefault()
 

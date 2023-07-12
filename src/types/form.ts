@@ -19,3 +19,5 @@ export interface Account {
     weight?: string
     height?: string
 }
+
+export type FormEvent = React.FormEvent<HTMLFormElement>

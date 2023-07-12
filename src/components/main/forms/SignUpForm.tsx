@@ -5,9 +5,9 @@ import { UserContext } from '../../../user/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
 import create from '../../../formUtils/enterOrCreate'
 import hideForm from '../../../formUtils/hideForm'
-import { Button, Props } from '../../../types/form'
+import { Button, FormEvent, Props } from '../../../types/form'
 
-const SignUpForm = ({hide}: Props) => {
+const SignUpForm = ({ hide }: Props) => {
 
     const navigate = useNavigate()
     const button = useRef<Button>(null)
@@ -22,7 +22,7 @@ const SignUpForm = ({hide}: Props) => {
 
     const [showLoader, setShowLoader] = useState(false)
 
-    function createAccount(e: React.FormEvent<HTMLFormElement>) {
+    function createAccount(e: FormEvent) {
         e.preventDefault()
         loaderIcon(button.current, setShowLoader)
         const user = { name, email, password, weight, height }
