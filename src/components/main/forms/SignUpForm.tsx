@@ -5,7 +5,7 @@ import { UserContext } from '../../../user/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
 import create from '../../../formUtils/enterOrCreate'
 import hideForm from '../../../formUtils/hideForm'
-import { Button, FormEvent, Props } from '../../../types/form'
+import { Button, FormEvent, Props, formClass } from '../../../types/form'
 
 const SignUpForm = ({ hide }: Props) => {
 
@@ -33,7 +33,7 @@ const SignUpForm = ({ hide }: Props) => {
     return (
         <div className='form' onClick={e => hideForm(e, hide)}>
             <form onSubmit={e => createAccount(e)}>
-                <div className='d-flex flex-column card p-4'>
+                <div className={formClass}>
                     <div className='input-group mb-2'>
                         <label className='input-group-text'>Nome</label>
                         <input onChange={e => setName(e.target.value)} className='form-control' type='text' required />
@@ -49,11 +49,11 @@ const SignUpForm = ({ hide }: Props) => {
                     <div className='d-flex justify-content-around my-4'>
                         <div className='d-flex flex-column align-items-center'>
                             <label>Peso</label>
-                            <input onChange={e => setWeight(e.target.value)} className='w-25' type='text' required />
+                            <input onChange={e => setWeight(e.target.value)} className='w-25 text-center' type='text' required />
                         </div>
                         <div className='d-flex flex-column align-items-center'>
                             <label>Altura (cm)</label>
-                            <input onChange={e => setHeight(e.target.value)} className='w-25' type='text' required />
+                            <input onChange={e => setHeight(e.target.value)} className='w-25 text-center' type='text' required />
                         </div>
                     </div>
                     <button ref={button} className='btn btn-outline-primary' type='submit'>Cadastrar</button>

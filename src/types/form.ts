@@ -21,3 +21,5 @@ export interface Account {
 }
 
 export type FormEvent = React.FormEvent<HTMLFormElement>
+
+export const formClass = 'card d-flex flex-column p-4'

@@ -5,7 +5,7 @@ import { UserContext } from '../../../user/UserContext'
 import { loaderIcon } from '../../../formUtils/icons-buttons'
 import enter from '../../../formUtils/enterOrCreate'
 import hideForm from '../../../formUtils/hideForm'
-import { Button, FormEvent, Props } from '../../../types/form'
+import { Button, FormEvent, Props, formClass } from '../../../types/form'
 
 const LoginForm = ({ hide }: Props) => {
 
@@ -29,7 +29,7 @@ const LoginForm = ({ hide }: Props) => {
     return (
         <div className='form' onClick={e => hideForm(e, hide)}>
             <form onSubmit={e => enterTheAccount(e)}>
-                <div className='d-flex flex-column card p-4'>
+                <div className={formClass}>
                     <div className='input-group mb-2'>
                         <label className='input-group-text'>E-mail</label>
                         <input onChange={e => setEmail(e.target.value)} className='form-control' type='email' required />
