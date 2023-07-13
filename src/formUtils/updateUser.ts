@@ -23,7 +23,7 @@ const updateUser = (user: User, name: string, weight: string, height: string) =>
 
     const account = {} as Person
     
-    account.email = user.email
+    account.id = user.id
     name ? account.name = name : account.name = user.name
     weight ? account.weight = weightFormat(weight) : account.weight = user.weight
     height ? account.height = heightFormat(height, user) : account.height = user.height

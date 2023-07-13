@@ -1,7 +1,7 @@
 import { SetStateAction } from 'react'
 
 export interface Person {
-    email: string
+    id: string
     name: string
     weight: number
     height: number
