@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import hideForm from '../../formUtils/hideForm'
 import { FormEvent, Props, formClass } from '../../types/form'
 import User from '../../user/user'
@@ -7,6 +8,7 @@ import { UserContext } from '../../user/UserContext'
 
 const EditAccountForm = ({ hide }: Props) => {
 
+    const navigate = useNavigate()
     const [user, setUser] = useContext(UserContext)
 
     const [name, setName] = useState('')
@@ -36,6 +38,37 @@ const EditAccountForm = ({ hide }: Props) => {
 
     }
 
+    const deleteAccount = () => {
+        
+        hide()
+
+        setTimeout(() => {
+
+            const password = prompt('Confirme sua senha')
+
+            if (password) {
+
+            const account = { id: user.id, password }
+            const options = {
+                method: 'delete',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(account)
+            }
+
+            fetch('http://localhost:8080/delete', options)
+                .then(res => {
+                    if (res.status === 401) {
+                        alert('Senha incorreta')
+                    } else {
+                        navigate('/')
+                    }
+                })
+
+            }
+
+        }, 100)
+    }
+
     return (
         <div onClick={e => hideForm(e, hide)} className='form'>
             <form onSubmit={e => updateAccount(e)}>
@@ -55,7 +88,7 @@ const EditAccountForm = ({ hide }: Props) => {
                         </div>
                     </div>
                     <button className='btn btn-outline-primary mb-2'>Salvar</button>
-                    <button className='btn btn-sm btn-link align-self-end' type='button'>Excluir Conta</button>
+                    <button onClick={() => deleteAccount()} className='btn btn-sm btn-link align-self-end' type='button'>Excluir Conta</button>
                 </div>
             </form>
         </div>
